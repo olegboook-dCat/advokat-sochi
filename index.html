@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Адвокат Васильев А. А. — Сочинский филиал ККА</title>
+  <meta name="description" content="Адвокат Васильев Александр Андреевич, заведующий Сочинским филиалом Краснодарской краевой коллегии адвокатов. Семейные, трудовые, земельные, наследственные споры, защита в уголовном процессе." />
+
+  <!-- Шрифты: Playfair Display (заголовки, засечки) + PT Sans (текст). Оба с кириллицей. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ШАПКА -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="На главную">
+        <img class="brand__emblem" src="assets/emblem.jpeg" alt="Эмблема — Фемида" />
+        <span class="brand__text">
+          <span class="brand__name">Адвокат Васильев А.&nbsp;А.</span>
+          <span class="brand__sub">Сочинский филиал ККА</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#about">Об адвокате</a>
+        <a href="#practice">Практика</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <a class="btn btn--gold header-phone" href="tel:+79181014040">
+        <span class="header-phone__label">+7 (918) 101‑40‑40</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <a href="#about">Об адвокате</a>
+      <a href="#practice">Практика</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+      <a class="btn btn--gold" href="tel:+79181014040">Позвонить</a>
+    </div>
+  </header>
+
+  <!-- ГЕРОЙ -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <p class="hero__eyebrow">Краснодарская краевая коллегия адвокатов · Сочинский филиал</p>
+      <h1 class="hero__title">У&nbsp;адвоката есть только одна форма&nbsp;капитала&nbsp;— его&nbsp;репутация</h1>
+      <p class="hero__lead">
+        Защита прав и интересов граждан и организаций в судах всех инстанций.
+        Профессиональное сопровождение на каждой стадии процесса.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--gold btn--lg" href="tel:+79181014040">Позвонить</a>
+        <a class="btn btn--ghost btn--lg" href="#contacts">Контакты</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ОБ АДВОКАТЕ -->
+  <section class="section" id="about">
+    <div class="container about">
+      <div class="about__media">
+        <img src="assets/lawyer.jpeg" alt="Адвокат Васильев Александр Андреевич" />
+      </div>
+      <div class="about__body">
+        <h2 class="section__title section__title--left">Об адвокате</h2>
+        <p>
+          <strong>Васильев Александр Андреевич</strong> — адвокат, заведующий Сочинским филиалом
+          Краснодарской краевой коллегии адвокатов.
+        </p>
+        <p>
+          Оказывает квалифицированную юридическую помощь физическим лицам и организациям:
+          от консультации и досудебного урегулирования до представительства в судах всех инстанций.
+          В работе — принципиальность, внимание к деталям и защита интересов доверителя в полном объёме.
+        </p>
+        <ul class="about__facts">
+          <li><span>Реестровый №</span><strong>23/6763</strong></li>
+          <li><span>Статус</span><strong>Действующий адвокат</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- НАПРАВЛЕНИЯ ПРАКТИКИ -->
+  <section class="section section--alt" id="practice">
+    <div class="container">
+      <h2 class="section__title">Направления практики</h2>
+      <p class="section__subtitle">Ведение дел в гражданском, административном и уголовном судопроизводстве</p>
+
+      <div class="cards">
+        <article class="card">
+          <h3 class="card__title">Гражданские споры</h3>
+          <ul class="card__list">
+            <li>Семейные споры</li>
+            <li>Наследственные споры</li>
+            <li>Земельные споры</li>
+            <li>Трудовые и пенсионные споры</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3 class="card__title">Представительство в суде</h3>
+          <ul class="card__list">
+            <li>Защита интересов в суде</li>
+            <li>Ведение дела на всех стадиях</li>
+            <li>Составление документов и жалоб</li>
+            <li>Обжалование судебных актов</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3 class="card__title">Уголовные дела</h3>
+          <ul class="card__list">
+            <li>Защита на предварительном следствии</li>
+            <li>Защита в суде первой инстанции</li>
+            <li>Апелляция и кассация</li>
+            <li>Правовая помощь на всех стадиях</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ОТЗЫВЫ -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <h2 class="section__title">Отзывы доверителей</h2>
+      <p class="section__subtitle">Замените тексты и имена на реальные отзывы</p>
+
+      <div class="cards">
+        <!-- TODO: заменить на реальные отзывы -->
+        <figure class="review">
+          <blockquote>«Грамотный и внимательный адвокат. Дело вёл спокойно и уверенно, результат превзошёл ожидания.»</blockquote>
+          <figcaption>— Имя доверителя</figcaption>
+        </figure>
+        <figure class="review">
+          <blockquote>«Помог разобраться в сложном земельном споре. Всё объяснил понятно, держал в курсе на каждом этапе.»</blockquote>
+          <figcaption>— Имя доверителя</figcaption>
+        </figure>
+        <figure class="review">
+          <blockquote>«Профессионал своего дела. Обращусь ещё и рекомендую знакомым.»</blockquote>
+          <figcaption>— Имя доверителя</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- КОНТАКТЫ -->
+  <section class="section section--alt" id="contacts">
+    <div class="container">
+      <h2 class="section__title">Контакты</h2>
+      <p class="section__subtitle">Позвоните или напишите — отвечу на ваши вопросы</p>
+
+      <div class="contacts">
+        <div class="contacts__col">
+          <div class="contact-item">
+            <span class="contact-item__label">Телефоны</span>
+            <a href="tel:+79181014040">+7 (918) 101‑40‑40</a>
+            <a href="tel:+79933134040">+7 (993) 313‑40‑40</a>
+            <a href="tel:+79182036923">+7 (918) 203‑69‑23</a>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-item__label">Эл. почта</span>
+            <!-- TODO: подтвердить точный адрес e-mail -->
+            <a href="mailto:advocat.sochi@mail.ru">advocat.sochi@mail.ru</a>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-item__label">Адрес</span>
+            <!-- TODO: подтвердить улицу (с рукописи читается нечётко) -->
+            <p>г. Сочи, ул. Врубеля, 19</p>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-item__label">Часы приёма</span>
+            <p>Пн–Пт: 9:00 – 18:00<br />Сб–Вс: по договорённости</p>
+          </div>
+        </div>
+
+        <div class="contacts__col contacts__col--actions">
+          <p class="contacts__cta">Свяжитесь удобным способом:</p>
+          <div class="messengers">
+            <a class="btn btn--gold btn--block" href="tel:+79181014040">Позвонить</a>
+            <!-- TODO: подтвердить номер для WhatsApp/Telegram при необходимости -->
+            <a class="btn btn--wa btn--block" href="https://wa.me/79181014040" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn--tg btn--block" href="https://t.me/+79181014040" target="_blank" rel="noopener">Telegram</a>
+            <a class="btn btn--ghost btn--block" href="mailto:advocat.sochi@mail.ru">Написать на почту</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ФУТЕР -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img class="footer-brand__emblem" src="assets/emblem.jpeg" alt="" />
+        <div>
+          <div class="footer-brand__name">Сочинский филиал</div>
+          <div class="footer-brand__sub">Краснодарской краевой коллегии адвокатов</div>
+        </div>
+      </div>
+
+      <div class="footer-legal">
+        <!-- TODO: сверить реквизиты с документами -->
+        <p>Адвокат Васильев Александр Андреевич</p>
+        <p>Реестровый № 23/6763</p>
+        <p>ОГРН 1082301800206</p>
+      </div>
+
+      <div class="footer-copy">
+        <p>© <span id="year"></span> Сочинский филиал ККА</p>
+        <a href="#top">Наверх ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
