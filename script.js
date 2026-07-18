@@ -37,4 +37,41 @@
       if (window.innerWidth > 900) closeMenu();
     });
   }
+
+  // Классическое скрытие шапки при прокрутке:
+  // вниз — уезжает вверх, вверх — возвращается; у самого верха всегда видима.
+  var header = document.querySelector(".site-header");
+  if (header) {
+    var lastY = window.pageYOffset;
+    var ticking = false;
+    var THRESHOLD = 8; // игнорируем микродёргания скролла
+
+    function onScroll() {
+      var y = window.pageYOffset;
+
+      // У самого верха или при открытом мобильном меню — показываем.
+      if (y <= header.offsetHeight || (toggle && toggle.getAttribute("aria-expanded") === "true")) {
+        header.classList.remove("site-header--hidden");
+        lastY = y;
+        ticking = false;
+        return;
+      }
+
+      if (y - lastY > THRESHOLD) {
+        header.classList.add("site-header--hidden");    // скролл вниз
+        lastY = y;
+      } else if (lastY - y > THRESHOLD) {
+        header.classList.remove("site-header--hidden");  // скролл вверх
+        lastY = y;
+      }
+      ticking = false;
+    }
+
+    window.addEventListener("scroll", function () {
+      if (!ticking) {
+        window.requestAnimationFrame(onScroll);
+        ticking = true;
+      }
+    }, { passive: true });
+  }
 })();
