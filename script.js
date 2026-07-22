@@ -74,4 +74,27 @@
       }
     }, { passive: true });
   }
+
+  // Кнопка «наверх»: появляется после прокрутки, плавно возвращает наверх
+  var toTop = document.getElementById("toTop");
+  if (toTop) {
+    var SHOW_AT = 400; // px прокрутки, после которых показываем кнопку
+
+    function toggleToTop() {
+      if (window.pageYOffset > SHOW_AT) {
+        toTop.classList.add("is-visible");
+      } else {
+        toTop.classList.remove("is-visible");
+      }
+    }
+
+    window.addEventListener("scroll", toggleToTop, { passive: true });
+    toggleToTop();
+
+    toTop.addEventListener("click", function () {
+      var reduce = window.matchMedia &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+    });
+  }
 })();

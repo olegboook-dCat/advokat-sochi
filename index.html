@@ -29,8 +29,8 @@
       <nav class="nav" aria-label="Основная навигация">
         <a href="#about">Об адвокате</a>
         <a href="#practice">Практика</a>
-        <a href="#reviews">Отзывы</a>
         <a href="#contacts">Контакты</a>
+        <a href="#reviews">Отзывы</a>
       </nav>
 
       <a class="btn btn--gold header-phone" href="tel:+79181017040">
@@ -46,8 +46,8 @@
     <div class="mobile-menu" id="mobileMenu" hidden>
       <a href="#about">Об адвокате</a>
       <a href="#practice">Практика</a>
-      <a href="#reviews">Отзывы</a>
       <a href="#contacts">Контакты</a>
+      <a href="#reviews">Отзывы</a>
       <a class="btn btn--gold" href="tel:+79181017040">Позвонить</a>
     </div>
   </header>
@@ -133,32 +133,8 @@
     </div>
   </section>
 
-  <!-- ОТЗЫВЫ -->
-  <section class="section section--alt" id="reviews">
-    <div class="container">
-      <h2 class="section__title">Отзывы доверителей</h2>
-      <p class="section__subtitle">Замените тексты и имена на реальные отзывы</p>
-
-      <div class="cards">
-        <!-- TODO: заменить на реальные отзывы -->
-        <figure class="review">
-          <blockquote>«Грамотный и внимательный адвокат. Дело вёл спокойно и уверенно, результат превзошёл ожидания.»</blockquote>
-          <figcaption>— Имя доверителя</figcaption>
-        </figure>
-        <figure class="review">
-          <blockquote>«Помог разобраться в сложном земельном споре. Всё объяснил понятно, держал в курсе на каждом этапе.»</blockquote>
-          <figcaption>— Имя доверителя</figcaption>
-        </figure>
-        <figure class="review">
-          <blockquote>«Профессионал своего дела. Обращусь ещё и рекомендую знакомым.»</blockquote>
-          <figcaption>— Имя доверителя</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
   <!-- КОНТАКТЫ -->
-  <section class="section" id="contacts">
+  <section class="section section--alt" id="contacts">
     <div class="container">
       <h2 class="section__title">Контакты</h2>
       <p class="section__subtitle">Позвоните или напишите — отвечу на ваши вопросы</p>
@@ -202,6 +178,30 @@
     </div>
   </section>
 
+  <!-- ОТЗЫВЫ -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <h2 class="section__title">Отзывы доверителей</h2>
+      <p class="section__subtitle">Замените тексты и имена на реальные отзывы</p>
+
+      <div class="cards">
+        <!-- TODO: заменить на реальные отзывы -->
+        <figure class="review">
+          <blockquote>«Грамотный и внимательный адвокат. Дело вёл спокойно и уверенно, результат превзошёл ожидания.»</blockquote>
+          <figcaption>— Имя доверителя</figcaption>
+        </figure>
+        <figure class="review">
+          <blockquote>«Помог разобраться в сложном земельном споре. Всё объяснил понятно, держал в курсе на каждом этапе.»</blockquote>
+          <figcaption>— Имя доверителя</figcaption>
+        </figure>
+        <figure class="review">
+          <blockquote>«Профессионал своего дела. Обращусь ещё и рекомендую знакомым.»</blockquote>
+          <figcaption>— Имя доверителя</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <!-- ФУТЕР -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -226,6 +226,13 @@
       </div>
     </div>
   </footer>
+
+  <!-- Кнопка «наверх» -->
+  <button class="to-top" id="toTop" type="button" aria-label="Наверх">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+      <path d="M12 5l7 7-1.4 1.4L13 8.8V20h-2V8.8L6.4 13.4 5 12z" fill="currentColor" />
+    </svg>
+  </button>
 
   <script src="script.js"></script>
 </body>
