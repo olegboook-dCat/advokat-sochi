@@ -1,0 +1,79 @@
+/* Панель модерации отзывов — тёмно-золотая тема, как на сайте */
+:root {
+  --bg: #14161a;
+  --panel: #1f232b;
+  --panel-2: #252a33;
+  --line: #33383f;
+  --gold: #c8a24d;
+  --gold-soft: #d9be7e;
+  --text: #ece9e2;
+  --muted: #a6a9ae;
+  --ok: #3f9d6b;
+  --err: #d9534f;
+  --radius: 8px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+a { color: var(--gold-soft); }
+.wrap { max-width: 860px; margin: 0 auto; padding: 24px 18px 60px; }
+
+/* Шапка */
+.admin-top {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; padding: 18px 0 22px; border-bottom: 1px solid var(--line); margin-bottom: 24px;
+}
+.admin-top h1 { font-size: 20px; margin: 0; }
+.admin-top .sub { color: var(--muted); font-size: 13px; }
+.logout { font-size: 14px; text-decoration: none; border: 1px solid var(--line); padding: 7px 14px; border-radius: var(--radius); color: var(--muted); }
+.logout:hover { border-color: var(--gold-deep); color: var(--text); }
+
+/* Вкладки */
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.tab {
+  text-decoration: none; font-size: 14px; padding: 8px 14px; border-radius: 999px;
+  border: 1px solid var(--line); color: var(--muted); background: var(--panel);
+}
+.tab.is-active { border-color: var(--gold); color: var(--text); background: var(--panel-2); }
+.tab .badge {
+  display: inline-block; min-width: 20px; text-align: center; margin-left: 6px;
+  font-size: 12px; padding: 1px 7px; border-radius: 999px; background: var(--gold); color: #14161a; font-weight: 700;
+}
+
+/* Карточка отзыва */
+.rev { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 18px; margin-bottom: 14px; }
+.rev__head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
+.rev__name { font-weight: 700; font-size: 16px; }
+.rev__meta { color: var(--muted); font-size: 13px; }
+.rev__status { font-size: 12px; padding: 2px 9px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.04em; }
+.rev__status--pending { background: rgba(217, 190, 126, 0.16); color: var(--gold-soft); }
+.rev__status--approved { background: rgba(63, 157, 107, 0.18); color: #7fd0a3; }
+.rev__body { margin: 8px 0 14px; white-space: pre-wrap; }
+.rev__contact { color: var(--muted); font-size: 13px; margin: 0 0 12px; }
+.rev__actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* Кнопки */
+.btn { font: inherit; cursor: pointer; border: 1px solid var(--line); background: var(--panel-2); color: var(--text); padding: 8px 16px; border-radius: var(--radius); }
+.btn:hover { border-color: var(--gold-deep); }
+.btn--ok { background: var(--gold); border-color: var(--gold); color: #14161a; font-weight: 700; }
+.btn--ok:hover { filter: brightness(1.07); }
+.btn--danger { color: #e5807a; border-color: rgba(217, 83, 79, 0.5); background: transparent; }
+.btn--danger:hover { background: rgba(217, 83, 79, 0.12); }
+
+.empty { color: var(--muted); text-align: center; padding: 40px 0; }
+
+/* Вход */
+.login { max-width: 380px; margin: 8vh auto 0; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 26px; }
+.login h1 { font-size: 20px; margin: 0 0 6px; }
+.login p.hint { color: var(--muted); font-size: 13px; margin: 0 0 22px; }
+.login label { display: block; font-size: 13px; color: var(--muted); margin: 0 0 6px; }
+.login input { width: 100%; font: inherit; color: var(--text); background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 11px 13px; margin-bottom: 16px; }
+.login input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(200, 162, 77, 0.18); }
+.login .btn--ok { width: 100%; padding: 11px; }
+.msg { border-radius: var(--radius); padding: 10px 13px; font-size: 14px; margin-bottom: 16px; }
+.msg--err { background: rgba(217, 83, 79, 0.14); color: #e5807a; border: 1px solid rgba(217, 83, 79, 0.4); }

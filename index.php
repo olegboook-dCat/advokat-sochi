@@ -1,3 +1,8 @@
+<?php
+require_once __DIR__ . '/includes/helpers.php';
+$reviews = approved_reviews();
+$csrf = csrf_token();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -182,10 +187,18 @@
   <section class="section" id="reviews">
     <div class="container">
       <h2 class="section__title">Отзывы доверителей</h2>
-      <p class="section__subtitle">Замените тексты и имена на реальные отзывы</p>
+      <p class="section__subtitle">Что говорят люди, которым помог адвокат</p>
 
       <div class="cards">
-        <!-- TODO: заменить на реальные отзывы -->
+<?php if (!empty($reviews)): ?>
+<?php foreach ($reviews as $r): ?>
+        <figure class="review">
+          <blockquote><?= e($r['body']) ?></blockquote>
+          <figcaption>— <?= e($r['name']) ?></figcaption>
+        </figure>
+<?php endforeach; ?>
+<?php elseif (SHOW_SAMPLE_REVIEWS): ?>
+        <!-- Примеры-заглушки: показываются, пока в базе нет одобренных отзывов -->
         <figure class="review">
           <blockquote>«Грамотный и внимательный адвокат. Дело вёл спокойно и уверенно, результат превзошёл ожидания.»</blockquote>
           <figcaption>— Имя доверителя</figcaption>
@@ -198,6 +211,46 @@
           <blockquote>«Профессионал своего дела. Обращусь ещё и рекомендую знакомым.»</blockquote>
           <figcaption>— Имя доверителя</figcaption>
         </figure>
+<?php else: ?>
+        <p class="reviews-empty">Пока отзывов нет — станьте первым!</p>
+<?php endif; ?>
+      </div>
+
+      <!-- Форма отзыва. Отправка в review-submit.php, публикация — после модерации в /admin. -->
+      <div class="review-form-wrap">
+        <h3 class="review-form__title">Оставить отзыв</h3>
+        <p class="review-form__note">Поделитесь опытом работы с адвокатом. Отзыв появится на сайте после проверки.</p>
+
+        <form class="review-form" id="reviewForm" action="review-submit.php" method="POST" novalidate>
+          <input type="hidden" name="csrf" value="<?= e($csrf) ?>" />
+          <!-- Ловушка для спам-ботов: настоящие люди это поле не видят и не заполняют -->
+          <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+          <div class="field">
+            <label for="rfName">Ваше имя <span class="req">*</span></label>
+            <input type="text" id="rfName" name="name" required maxlength="80" autocomplete="name" placeholder="Как вас представить" />
+          </div>
+
+          <div class="field">
+            <label for="rfContact">Телефон или e-mail <span class="opt">(необязательно)</span></label>
+            <input type="text" id="rfContact" name="contact" maxlength="120" placeholder="Чтобы при необходимости связаться с вами" />
+          </div>
+
+          <div class="field">
+            <label for="rfText">Ваш отзыв <span class="req">*</span></label>
+            <textarea id="rfText" name="body" rows="5" required maxlength="1500" placeholder="Расскажите, с каким вопросом обращались и как прошла работа"></textarea>
+          </div>
+
+          <label class="consent">
+            <input type="checkbox" id="rfConsent" required />
+            <span>Согласен(-на) на обработку персональных данных</span>
+          </label>
+
+          <div class="review-form__actions">
+            <button type="submit" class="btn btn--gold" id="rfSubmit">Отправить отзыв</button>
+            <p class="review-form__status" id="rfStatus" role="status" aria-live="polite"></p>
+          </div>
+        </form>
       </div>
     </div>
   </section>

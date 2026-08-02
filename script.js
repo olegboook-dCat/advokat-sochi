@@ -97,4 +97,54 @@
       window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
     });
   }
+
+  // Форма отзыва → Web3Forms (отправка без перезагрузки страницы)
+  var reviewForm = document.getElementById("reviewForm");
+  if (reviewForm) {
+    var statusEl = document.getElementById("rfStatus");
+    var submitBtn = document.getElementById("rfSubmit");
+
+    reviewForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      if (!reviewForm.checkValidity()) {
+        reviewForm.reportValidity();
+        return;
+      }
+
+      statusEl.className = "review-form__status";
+      statusEl.textContent = "Отправляем…";
+      submitBtn.disabled = true;
+
+      fetch(reviewForm.getAttribute("action"), {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: new FormData(reviewForm)
+      })
+        .then(function (r) {
+          return r.json().then(function (j) { return { ok: r.ok, data: j }; });
+        })
+        .then(function (res) {
+          var msg = res.data && res.data.message;
+          if (res.ok && res.data && res.data.success) {
+            reviewForm.reset();
+            statusEl.className = "review-form__status is-ok";
+            statusEl.textContent = msg ||
+              "Спасибо! Ваш отзыв отправлен на модерацию и появится на сайте после проверки.";
+          } else {
+            statusEl.className = "review-form__status is-err";
+            statusEl.textContent = msg ||
+              "Не удалось отправить отзыв. Попробуйте ещё раз или свяжитесь с нами по телефону.";
+          }
+        })
+        .catch(function () {
+          statusEl.className = "review-form__status is-err";
+          statusEl.textContent =
+            "Ошибка сети. Проверьте подключение к интернету и попробуйте снова.";
+        })
+        .finally(function () {
+          submitBtn.disabled = false;
+        });
+    });
+  }
 })();
