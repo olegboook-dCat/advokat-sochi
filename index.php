@@ -8,8 +8,8 @@ $csrf = csrf_token();
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Адвокат Васильев А. А. — Сочинский филиал ККА</title>
-  <meta name="description" content="Адвокат Васильев Александр Андреевич, заведующий Сочинским филиалом Краснодарской краевой коллегии адвокатов. Семейные, трудовые, земельные, наследственные споры, защита в уголовном процессе." />
+  <title>Адвокат Васильев А. А. — Сочинский филиал №&nbsp;6 ККА</title>
+  <meta name="description" content="Адвокат Васильев Александр Андреевич, заведующий Сочинским филиалом №&nbsp;6 Краснодарской краевой коллегии адвокатов. Семейные, трудовые, земельные, наследственные споры, защита в уголовном процессе." />
 
   <!-- Шрифты: Playfair Display (заголовки, засечки) + PT Sans (текст). Оба с кириллицей. -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,7 +27,7 @@ $csrf = csrf_token();
         <img class="brand__emblem" src="assets/emblem.jpeg" alt="Эмблема — Фемида" />
         <span class="brand__text">
           <span class="brand__name">Адвокат Васильев А.&nbsp;А.</span>
-          <span class="brand__sub">Сочинский филиал ККА</span>
+          <span class="brand__sub">Сочинский филиал №&nbsp;6 ККА</span>
         </span>
       </a>
 
@@ -60,7 +60,7 @@ $csrf = csrf_token();
   <!-- ГЕРОЙ -->
   <section class="hero">
     <div class="container hero__inner">
-      <p class="hero__eyebrow">Краснодарская краевая коллегия адвокатов · Сочинский филиал</p>
+      <p class="hero__eyebrow">Краснодарская краевая коллегия адвокатов · Сочинский филиал №&nbsp;6</p>
       <h1 class="hero__title">У&nbsp;адвоката есть только одна форма&nbsp;капитала&nbsp;— его&nbsp;репутация</h1>
       <p class="hero__lead">
         Защита прав и интересов граждан и организаций в судах всех инстанций.
@@ -82,7 +82,7 @@ $csrf = csrf_token();
       <div class="about__body">
         <h2 class="section__title section__title--left">Об адвокате</h2>
         <p>
-          <strong>Васильев Александр Андреевич</strong> — адвокат, заведующий Сочинским филиалом
+          <strong>Васильев Александр Андреевич</strong> — адвокат, заведующий Сочинским филиалом №&nbsp;6
           Краснодарской краевой коллегии адвокатов.
         </p>
         <p>
@@ -261,7 +261,7 @@ $csrf = csrf_token();
       <div class="footer-brand">
         <img class="footer-brand__emblem" src="assets/emblem.jpeg" alt="" />
         <div>
-          <div class="footer-brand__name">Сочинский филиал</div>
+          <div class="footer-brand__name">Сочинский филиал №&nbsp;6</div>
           <div class="footer-brand__sub">Краснодарской краевой коллегии адвокатов</div>
         </div>
       </div>
@@ -274,7 +274,7 @@ $csrf = csrf_token();
       </div>
 
       <div class="footer-copy">
-        <p>© <span id="year"></span> Сочинский филиал ККА</p>
+        <p>© <span id="year"></span> Сочинский филиал №&nbsp;6 ККА</p>
         <a href="#top">Наверх ↑</a>
       </div>
     </div>
