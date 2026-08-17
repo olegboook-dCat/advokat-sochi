@@ -2,15 +2,16 @@
 /**
  * Настройки проекта.
  *
- * Локально (Mac): оставьте DB_DRIVER = 'sqlite' — база создастся сама в data/reviews.sqlite,
- * ничего устанавливать не нужно.
- *
- * На Timeweb: поставьте DB_DRIVER = 'mysql' и впишите данные базы из панели Timeweb.
+ * Драйвер базы выбирается АВТОМАТИЧЕСКИ:
+ *   - локально под `php -S` (встроенный сервер) → SQLite (ничего ставить не нужно);
+ *   - на хостинге (Apache/nginx на Timeweb)      → MySQL.
+ * Поэтому один и тот же config.php работает и локально, и на Timeweb —
+ * переключать вручную ничего не надо. Нужно лишь заполнить доступы MySQL ниже.
  */
 
 // --- База данных -----------------------------------------------------------
-// 'sqlite' — для локального запуска;  'mysql' — для хостинга Timeweb.
-define('DB_DRIVER', getenv('DB_DRIVER') ?: 'sqlite');
+// cli-server = встроенный сервер `php -S` (локальная разработка) → SQLite; иначе MySQL.
+define('DB_DRIVER', php_sapi_name() === 'cli-server' ? 'sqlite' : 'mysql');
 
 // Путь к файлу SQLite (используется только при DB_DRIVER = 'sqlite')
 define('SQLITE_PATH', __DIR__ . '/data/reviews.sqlite');
